@@ -71,7 +71,7 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeight = 34;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 122);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 116);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
@@ -99,6 +99,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(262, 35);
             this.textBox2.TabIndex = 1;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // label2
             // 
@@ -136,7 +137,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sylfaen", 20F);
-            this.label3.Location = new System.Drawing.Point(242, 124);
+            this.label3.Location = new System.Drawing.Point(233, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(146, 52);
             this.label3.TabIndex = 8;
@@ -248,9 +249,9 @@
             this.label11.Font = new System.Drawing.Font("SimSun-ExtB", 22F, System.Drawing.FontStyle.Bold);
             this.label11.Location = new System.Drawing.Point(343, 503);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(364, 44);
+            this.label11.Size = new System.Drawing.Size(456, 44);
             this.label11.TabIndex = 18;
-            this.label11.Text = "Change Language";
+            this.label11.Text = "Change Language(el)";
             this.label11.Click += new System.EventHandler(this.label11_Click_1);
             this.label11.MouseEnter += new System.EventHandler(this.label11_MouseEnter);
             this.label11.MouseLeave += new System.EventHandler(this.label11_MouseLeave);
@@ -298,7 +299,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1161, 742);
+            this.ClientSize = new System.Drawing.Size(1074, 713);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label12);
@@ -328,6 +329,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MiniWiki1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

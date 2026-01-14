@@ -171,22 +171,26 @@ namespace Wikipidia_Exercise
         {
             language = "en";
             speaker.SelectVoice("Microsoft David Desktop");
+            label11.Text = "Change Language(en)";
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
             language = "ja";
+            label11.Text = "Change Language(ja)";
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
             language = "ru";
+            label11.Text = "Change Language(ru)";
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
             language = "el";
             speaker.SelectVoice("Microsoft Stefanos");
+            label11.Text = "Change Language(el)";
         }
 
         private void label11_Click(object sender, EventArgs e)
@@ -296,10 +300,11 @@ namespace Wikipidia_Exercise
                 client.DefaultRequestHeaders.Add("apikey", supabase.ApiKey);
                 client.DefaultRequestHeaders.Add("Authorization", $"Bearer {supabase.ApiKey}");
 
-                var data = new
+                FavSearch data = new FavSearch
                 {
                     Name = searchTerm,
-                    Language = lang
+                    Language = lang,
+                    Url = $"https://{lang}.wikipedia.org/api/rest_v1/page/summary/{Uri.EscapeDataString(searchTerm)}"
                 };
 
                 string json = JsonConvert.SerializeObject(data);
@@ -363,7 +368,8 @@ namespace Wikipidia_Exercise
             FavSearch selectedSearch1 = new FavSearch
             {
                 Name = row.Cells["Name"].Value.ToString(),
-                Language = row.Cells["Language"].Value.ToString()
+                Language = row.Cells["Language"].Value.ToString(),
+                Url = row.Cells["Url"].Value.ToString()
             };
            
 
@@ -400,6 +406,7 @@ namespace Wikipidia_Exercise
         private void label11_Click_1(object sender, EventArgs e)
         {
             UIManaging(true);
+            textBox2.Clear();
             textBox3.Text = "";
             pictureBox1.Image = null;
         }
@@ -409,6 +416,7 @@ namespace Wikipidia_Exercise
         private async void label12_Click(object sender, EventArgs e)
         {
             label3.Visible = false;
+            textBox2.Clear();
             label4.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
@@ -473,6 +481,21 @@ namespace Wikipidia_Exercise
            await LoadFavouritesAsync();
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
     }
     
     }
@@ -503,5 +526,9 @@ public class FavSearch
 {
     public string Name { get; set; }
     public string Language { get; set; }
+    public string Url { get; set; }
+
+    
+ 
 }
 
