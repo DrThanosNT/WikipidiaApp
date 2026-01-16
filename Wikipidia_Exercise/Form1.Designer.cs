@@ -1,4 +1,7 @@
-﻿namespace Wikipidia_Exercise
+﻿using System;
+using System.Drawing;
+
+namespace Wikipidia_Exercise
 {
     partial class Form1
     {
@@ -14,6 +17,83 @@
         }
 
         #region Windows Form Designer generated code
+
+        private void label3_MouseEnter(object sender, EventArgs e)
+        {
+            label3.Font = new Font(label3.Font, FontStyle.Underline);
+        }
+
+        private void label3_MouseLeave(object sender, EventArgs e)
+        {
+            label3.Font = new Font(label3.Font, FontStyle.Regular);
+        }
+
+        private void label4_MouseEnter(object sender, EventArgs e)
+        {
+            label4.Font = new Font(label4.Font, FontStyle.Underline);
+        }
+
+        private void label4_MouseLeave(object sender, EventArgs e)
+        {
+            label4.Font = new Font(label4.Font, FontStyle.Regular);
+        }
+
+        private void label5_MouseEnter(object sender, EventArgs e)
+        {
+            label5.Font = new Font(label5.Font, FontStyle.Underline);
+        }
+
+        private void label5_MouseLeave(object sender, EventArgs e)
+        {
+            label5.Font = new Font(label5.Font, FontStyle.Regular);
+        }
+
+        private void label6_MouseEnter(object sender, EventArgs e)
+        {
+            label6.Font = new Font(label6.Font, FontStyle.Underline);
+        }
+
+        private void label6_MouseLeave(object sender, EventArgs e)
+        {
+            label6.Font = new Font(label6.Font, FontStyle.Regular);
+        }
+
+        private void label11_MouseEnter(object sender, EventArgs e)
+        {
+            label11.Font = new Font(label11.Font, FontStyle.Underline);
+        }
+
+        private void label11_MouseLeave(object sender, EventArgs e)
+        {
+            label11.Font = new Font(label11.Font, FontStyle.Bold);
+        }
+        private void label11_Click_1(object sender, EventArgs e)
+        {
+            UIManaging(true);
+            textBox2.Clear();
+            textBox3.Clear();
+            pictureBox1.Image = null;
+            label7.Visible = true;
+            label8.Visible = true;
+            label9.Visible = true;
+            label10.Visible = true;
+        }
+
+        private void label12_MouseEnter(object sender, EventArgs e)
+        {
+            label12.Font = new Font(label12.Font, FontStyle.Underline);
+        }
+
+        private void label12_MouseLeave(object sender, EventArgs e)
+        {
+            label12.Font = new Font(label12.Font, FontStyle.Bold);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // intentionally empty
+        }
+
 
         private void InitializeComponent()
         {
@@ -79,6 +159,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(262, 425);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.Visible = false;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -86,7 +167,7 @@
             this.label1.Font = new System.Drawing.Font("SimSun-ExtB", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(272, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(571, 144);
+            this.label1.Size = new System.Drawing.Size(477, 120);
             this.label1.TabIndex = 6;
             this.label1.Text = "WikiApp";
             // 
@@ -107,7 +188,7 @@
             this.label2.Font = new System.Drawing.Font("Bernard MT Condensed", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(340, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 64);
+            this.label2.Size = new System.Drawing.Size(0, 52);
             this.label2.TabIndex = 7;
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -139,7 +220,7 @@
             this.label3.Font = new System.Drawing.Font("Sylfaen", 20F);
             this.label3.Location = new System.Drawing.Point(233, 136);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 52);
+            this.label3.Size = new System.Drawing.Size(125, 44);
             this.label3.TabIndex = 8;
             this.label3.Text = "English";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -152,7 +233,7 @@
             this.label4.Font = new System.Drawing.Font("Sylfaen", 20F);
             this.label4.Location = new System.Drawing.Point(201, 224);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 52);
+            this.label4.Size = new System.Drawing.Size(133, 44);
             this.label4.TabIndex = 9;
             this.label4.Text = "日本語";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -165,7 +246,7 @@
             this.label5.Font = new System.Drawing.Font("Sylfaen", 20F);
             this.label5.Location = new System.Drawing.Point(603, 136);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(170, 52);
+            this.label5.Size = new System.Drawing.Size(145, 44);
             this.label5.TabIndex = 10;
             this.label5.Text = "Русский";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -178,7 +259,7 @@
             this.label6.Font = new System.Drawing.Font("Sylfaen", 20F);
             this.label6.Location = new System.Drawing.Point(632, 224);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(179, 52);
+            this.label6.Size = new System.Drawing.Size(153, 44);
             this.label6.TabIndex = 11;
             this.label6.Text = "Ελληνικά";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -192,7 +273,7 @@
             this.label7.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label7.Location = new System.Drawing.Point(214, 171);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(218, 31);
+            this.label7.Size = new System.Drawing.Size(188, 26);
             this.label7.TabIndex = 12;
             this.label7.Text = "7.102.000+ articles";
             // 
@@ -203,7 +284,7 @@
             this.label8.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label8.Location = new System.Drawing.Point(172, 272);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(218, 31);
+            this.label8.Size = new System.Drawing.Size(188, 26);
             this.label8.TabIndex = 13;
             this.label8.Text = "1.514.000+ articles";
             // 
@@ -214,7 +295,7 @@
             this.label9.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label9.Location = new System.Drawing.Point(582, 171);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(218, 31);
+            this.label9.Size = new System.Drawing.Size(188, 26);
             this.label9.TabIndex = 14;
             this.label9.Text = "1.483.000+ articles";
             // 
@@ -225,7 +306,7 @@
             this.label10.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label10.Location = new System.Drawing.Point(633, 272);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(198, 31);
+            this.label10.Size = new System.Drawing.Size(171, 26);
             this.label10.TabIndex = 15;
             this.label10.Text = "200.000+ articles";
             // 
@@ -249,9 +330,9 @@
             this.label11.Font = new System.Drawing.Font("SimSun-ExtB", 22F, System.Drawing.FontStyle.Bold);
             this.label11.Location = new System.Drawing.Point(343, 503);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(456, 44);
+            this.label11.Size = new System.Drawing.Size(397, 37);
             this.label11.TabIndex = 18;
-            this.label11.Text = "Change Language(el)";
+            this.label11.Text = "Change Language(gr)";
             this.label11.Click += new System.EventHandler(this.label11_Click_1);
             this.label11.MouseEnter += new System.EventHandler(this.label11_MouseEnter);
             this.label11.MouseLeave += new System.EventHandler(this.label11_MouseLeave);
@@ -262,7 +343,7 @@
             this.label12.Font = new System.Drawing.Font("SimSun-ExtB", 22F, System.Drawing.FontStyle.Bold);
             this.label12.Location = new System.Drawing.Point(340, 547);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(433, 44);
+            this.label12.Size = new System.Drawing.Size(377, 37);
             this.label12.TabIndex = 19;
             this.label12.Text = "Favourite Searches";
             this.label12.Click += new System.EventHandler(this.label12_Click);
